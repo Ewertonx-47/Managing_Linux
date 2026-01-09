@@ -1,6 +1,6 @@
 Nesse homelab, será criado uma partição para o /boot, pois na instalação do sistema operacional Linux, não foi feito isso. A não criação foi proposital para que seja utilizado métodos necessários para a criação já com o SO em execução. Para isso, foi necessário a utilização do LIVECD do Linux, que é o sistema sendo executado na memória, mas não está no dispositivo de armazenamento. O virtualizador utilizado para criar a VM foi o Proxmox.
 
-Abaixo temos a informação do sistema operacional principal e suas partições:
+Abaixo, temos a informação do sistema operacional principal e suas partições:
 
 ![jobdelete](../Imagens/lsblk_vm1.png)
 
@@ -52,7 +52,7 @@ Por que durante a instalação eu consigo particionar, mas depois preciso de LIV
 
 
 
-* Durante a instalação está montada como sistema ativo
+* Durante a instalação não está montada como sistema ativo
 * O disco não está em uso
 * O instalador roda em um ambiente live (RAM)
 
