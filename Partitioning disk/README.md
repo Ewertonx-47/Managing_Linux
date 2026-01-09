@@ -2,7 +2,7 @@ Nesse homelab, será criado uma partição para o /boot, pois na instalação do
 
 Abaixo temos a informação do sistema operacional principal e suas partições:
 
-!\[lsblk1](../Imagens/lsblk_vm1.png)
+![jobdelete](../Assets/Imagens/lsblk_rescue.png)
 
 sda1 - Bios_boot
 
@@ -135,7 +135,7 @@ Agora, já esclarecido as questões sobre o /boot e filesystem, seguiremos o pro
 
 
 
-!\[rescue](../Imagens/vm\_rescue\_no\_disk.png)
+![rescue](../Imagens/vm\_rescue\_no\_disk.png)
 
 
 
@@ -153,7 +153,7 @@ Os comandos usado para isso foi os seguintes:
 
 
 
-!\[anexo](../Imagens/anexo\_VM1xVM2.png)
+![anexo](../Imagens/anexo\_VM1xVM2.png)
 
 
 
@@ -165,7 +165,7 @@ Dessa forma, com a VM rescue criada e anexado o disco a VM principal, a VM deve 
 
 
 
-!\[rescuelsblk](../Imagens/lsblk\_rescue.png)
+![rescuelsblk](../Imagens/lsblk\_rescue.png)
 
 
 
