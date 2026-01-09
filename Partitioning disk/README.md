@@ -169,5 +169,5 @@ Dessa forma, com a VM rescue criada e anexado o disco a VM principal, a VM deve 
 
 
 
-Na imagem, é possível ver que  os mesmo discos e partições da VM rescue e o da VM principal.
+Na imagem, é possível ver que  os mesmo discos e partições da VM rescue é o da VM principal.
 
