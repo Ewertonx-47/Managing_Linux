@@ -135,7 +135,7 @@ Agora, já esclarecido as questões sobre o /boot e filesystem, seguiremos o pro
 
 
 
-![rescue](../Imagens/vm_rescue_no_disk.png)
+![rescue](../Imagens/Particionamento/vm_rescue_no_disk.png)
 
 
 
@@ -153,7 +153,7 @@ Os comandos usado para isso foram os seguintes:
 
 
 
-![anexo](../Imagens/anexo_VM1xVM2.png)
+![anexo](../Imagens/Particionamento/anexo_VM1xVM2.png)
 
 
 
@@ -165,7 +165,7 @@ Dessa forma, com a VM rescue criada e anexado o disco a VM principal, a VM deve 
 
 
 
-![rescuelsblk](../Imagens/lsblk_rescue.png)
+![rescuelsblk](../Imagens/Particionamento/lsblk_rescue.png)
 
 
 
