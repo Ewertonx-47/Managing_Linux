@@ -254,7 +254,18 @@ Agora, com a nova VM criada, feito o a verificação de integridade e reajuste d
 
 ![e2fsck](../Imagens/Particionamento/novo_reajuste2.png)
 
-Criado a partição.
+Feito a diminuição de sda2.
 
-* sudo parted /dev/sda 
+* resizepart 2 73.2GB
+
+![redipart](../Imagens/Particionamento/novo_redimensionamento.png)
+
+Criado a nova partição.
+
+* sudo parted /dev/sda
+* mkpart primary ext4 73.2GB 100% 
+* set 3 boot on
+* print
+
+![newpart](../Imagens/Particionamento/new_partition.png)
 
