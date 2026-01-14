@@ -176,7 +176,7 @@ Na imagem, é possível ver que os mesmos discos e partições da VM rescue é o
 * resizepart 2 40GB - Redimensionar a partição, o dois é informando qual partição e o quarenta é o tamanho solicitado.
 
 
-![parted](../Imagens/Particionamento/redimensionamento_particao.png)
+![parted](../Imagens/Particionamento/redimensionando_particao.png)
 
 Após isso, criaremos a partição e formataremos usando os seguintes comandos:
 
