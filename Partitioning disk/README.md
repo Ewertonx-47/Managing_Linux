@@ -153,7 +153,7 @@ Os comandos usado para isso foram os seguintes:
 
 
 
-![anexo](../Imagens/Particionamento/anexo_VM1xVM2.png)
+![anexo](../Imagens/Particionamento/anexo_VM1xVM2.png) 
 
 
 
