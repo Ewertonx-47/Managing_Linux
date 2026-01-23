@@ -1,1 +1,1 @@
-q
+Nesse homelab iremos hospedar um site em um servidor web, que é o Apache utilizando o Ubuntu Server. O projeto que será armazenado no Apache se trata de um site climatico, na qual ao inserir a cidade, ele trará as informações do clima da região. O site é estático, utilizando apenas HTML e CSS e não possui banco de dados ou outras aplicações. Dessa forma, apenas uma VM será o suficientepara entender como funciona o serviço Apache. Antes de qualquer coisa, caso Apache não esteja instalado
