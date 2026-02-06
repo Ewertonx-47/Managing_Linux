@@ -9,7 +9,9 @@ Para visualizar as variáveis armazenadas na NVRAM, utiliza-se o comando:
 
 * efibootmgr
 
+ ![lsblk](../Imagens/UEFI/efibootmgr.png)
 
+ 
  2. Análise da Saída efibootmgr
 Com base na execução do comando, identificamos os seguintes parâmetros:
 
@@ -28,7 +30,11 @@ HD(1,GPT,...): O firmware identifica a primeira partição de um disco com tabel
 File(\EFI\debian\shimx64.efi): O caminho absoluto dentro da partição para o executável do firmware.
 
  3. Verificação de Partições e Sistema de Arquivos
-Utilizamos o comando abaixo para visualizar a estrutura de blocos e sistemas de arquivos: lsblk -f
+Utilizamos o comando abaixo para visualizar a estrutura de blocos e sistemas de arquivos:
+
+* lsblk -f
+
+ ![lsblk](../Imagens/UEFI/lsblk-f.png)
 
 Observa-se que a partição /dev/sda1 (ESP) utiliza o formato FAT32, enquanto /dev/sda2 utiliza EXT4.
 
@@ -48,6 +54,8 @@ Contém apenas os executáveis UEFI.
 Listando o conteúdo de forma recursiva:
 
 * ls -R /boot/efi
+
+ ![lsblk](../Imagens/UEFI/ls-r.png)
 
 No caminho /boot/efi/EFI/debian, encontramos os arquivos:
 
@@ -75,14 +83,28 @@ Parâmetros:
 
 -l: Path do carregador EFI.
 
-Após a criação, pode-se observar que o BootOrder mudou a hierarquia. Porém, ao rebootar a VM, ela segue utilizando a entrada 0004 porque o UEFI de uma VM não se comporta igual um UEFI de um bera metal. UEFI no proxmox é um arquivo de o QEMU simula. Nesse caso, o soberano é o Hypervison, não o UEFI e o Proxmox por padrão faz com que o firmware virtual escolha entradas genericas e ignorar entradas customizadas/não confiaveis. 
+ ![lsblk](../Imagens/UEFI/entry.png)
+ 
+Após a criação, pode-se observar que o BootOrder mudou a hierarquia. Porém, ao rebootar a VM, ela segue utilizando a entrada 0004 porque o UEFI de uma VM não se comporta igual um UEFI de um bera metal. UEFI no proxmox é um arquivo de o QEMU simula. Nesse caso, o soberano é o Hypervison, não o UEFI. E o Proxmox por padrão faz com que o firmware virtual escolha entradas genericas e ignorar entradas customizadas/não confiaveis. 
 
 Mediante a isso, será utilizado o Ubuntu server no virtualbix para mostrar o real comportamento do UEFI em uma máquina física. 
 
- 6. Alteração da Ordem de Inicialização (Boot Order) - Ubuntu
+ 6. Criação e Alteração da Ordem de Inicialização (Boot Order) - Ubuntu
 
-Para forçar uma nova hierarquia de boot manualmente:
+* sudo efibootmgr -c -d /dev/sda -p 1 -L "Linux-Teste" -l '\EFI\ubuntu\grubx64.efi'
+
+ ![lsblk](../Imagens/UEFI/entry_virtualbox.png)
+
+ Observe que o BootOrder já mudou.
+
+ Para forçar uma nova hierarquia de boot manualmente (sair de 0002 para 0003):
 
 * sudo efibootmgr -o 0003,0002,0001,0000
-  
-A alteração no BootOrder é refletida imediatamente na saída do comando e será aplicada no próximo ciclo de inicialização do hardware.
+
+ ![lsblk](../Imagens/entry_defined.png)
+ 
+A alteração no BootOrder é refletida imediatamente na saída do comando e será aplicada no próximo ciclo de inicialização do hardware. Agora só rebootar a máquina:
+
+ ![lsblk](../Imagens/UEFI/after_reboot_virtualbox.png)
+
+ 
