@@ -9,6 +9,7 @@ Para visualizar as variáveis armazenadas na NVRAM, utiliza-se o comando:
 
 * efibootmgr
 
+
  2. Análise da Saída efibootmgr
 Com base na execução do comando, identificamos os seguintes parâmetros:
 
