@@ -85,7 +85,7 @@ Parâmetros:
 
  ![lsblk](../Imagens/UEFI/entry.png)
  
-Após a criação, pode-se observar que o BootOrder mudou a hierarquia. Porém, ao rebootar a VM, ela segue utilizando a entrada 0004 porque o UEFI de uma VM não se comporta igual um UEFI de um bera metal. UEFI no proxmox é um arquivo de o QEMU simula. Nesse caso, o soberano é o Hypervison, não o UEFI. E o Proxmox por padrão faz com que o firmware virtual escolha entradas genericas e ignorar entradas customizadas/não confiaveis. 
+Após a criação, pode-se observar que o BootOrder mudou a hierarquia. Porém, ao rebootar a VM, ela segue utilizando a entrada 0004 porque o UEFI de uma VM não se comporta igual um UEFI de um bera metal. UEFI no proxmox é um arquivo que o QEMU simula. Nesse caso, o define a forma de inicialização é o Hypervison, não o UEFI. E o Proxmox por padrão faz com que o UEFI virtual escolha entradas genericas e ignora entradas customizadas/não confiaveis. 
 
 Mediante a isso, será utilizado o Ubuntu server no virtualbix para mostrar o real comportamento do UEFI em uma máquina física. 
 
