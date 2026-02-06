@@ -101,7 +101,7 @@ Mediante a isso, será utilizado o Ubuntu server no virtualbix para mostrar o re
 
 * sudo efibootmgr -o 0003,0002,0001,0000
 
- ![lsblk](../Imagens/entry_defined.png)
+ ![lsblk](../Imagens/UEFI/entry_defined.png)
  
 A alteração no BootOrder é refletida imediatamente na saída do comando e será aplicada no próximo ciclo de inicialização do hardware. Agora só rebootar a máquina:
 
