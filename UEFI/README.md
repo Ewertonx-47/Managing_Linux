@@ -95,7 +95,6 @@ Mediante a isso, será utilizado o Ubuntu server no virtualbox para mostrar o re
 
  ![lsblk](../Imagens/UEFI/entry_virtualbox.png)
 
- Observe que o BootOrder já mudou.
 
  Para forçar uma nova hierarquia de boot manualmente (sair de 0002 para 0003):
 
