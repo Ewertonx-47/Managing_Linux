@@ -85,7 +85,7 @@ Após o reboot do sistema, ela inciará como modo texto.
 
 ![display](../Imagens/Runlevel-DisplayManager/no_display.png)
 
-Acessado /etc/inittab sem interface gráfica:
+Acessando /etc/inittab sem interface gráfica:
 
 ![still](../Imagens/Runlevel-DisplayManager/still_runlevel2.png)
 
