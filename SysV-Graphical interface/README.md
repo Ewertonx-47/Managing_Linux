@@ -29,7 +29,7 @@ Quando o systemV olha para o /etc/init/rc 2, ele entende que deve ir até o dire
 
 rc2.d (Runlevel atual):
 
-![preparando imagem](../Imagens/Runlevel-DisplayManager/rc2.d_linksym.png)
+![linksym](../Imagens/Runlevel-DisplayManager/rc2.d_linksym.png)
 
 Dentro de rc2.d é possível visualizar todos os arquivos de serviço. Pode-se perceber que o nome dos arquivos começam com K (kill)e depois mudam para S (Start). Isso significa que o systemV identifica primeiro os serviços que NÃO devem ser executados e depois os que devem inicializar. Esses arquivos também segue uma ordem de numeração, qual é do menor para o maior. Por exemplo a ordem do rc2.d começa com 01, 02, 03, 04 e 05. Mas um ponto muito importante desses arquivos é que todos eles são links simbólicos. Esses links simbólicos direcionam o sistema para o arquivo de serviço real, que fica localizado em /etc/init.d/*.
 
@@ -41,9 +41,46 @@ Dentro de rc2.d é possível visualizar todos os arquivos de serviço. Pode-se p
 
 A sáida do comando informa que o runlevel atual é o 2, conforme descrito também na syntaxe do /etc/inittab. 
 
- 4. Aletrando runlevel atual:
+ 4. Alterando runlevel atual:
 
 * sudo init 3
 
 ![change](../Imagens/Runlevel-DisplayManager/change_runlevel.png)
 
+A saída do comando runlevel mostra 2 e 3. Isso indica que foi feita a mudança de runlevel. No Debian/Devuan, os runlevels 2, 3, 4 e 5 são praticamente iguais por padrão. O motivo da interface gráfica ainda está habilitada é que no Debian/Devuan o display manager (ex: lightdm, gdm, slim etc) é iniciado no runlevel padrão através dos scripts em /etc/rc2.d/. 
+
+ 5. Veja qual display manager está instalado:
+
+* ls /etc/init.d | grep -E "gdm|lightdm|slim|xdm"
+
+![change](../Imagens/Runlevel-DisplayManager/check_displaymanager.png)
+
+Conforma a saída do comando executado acima, o display manager nessa distro é o Slim. 
+
+Agora, identificado o display manager, deve ser localizado o os runlevels que executando ele utilizando o comando:
+
+* ls etc/rc2.d | grep slim
+* ls etc/rc3.d | grep slim
+
+![change](../Imagens/Runlevel-DisplayManager/verify_displaymanager.png)
+
+Nessa caso, ambos runlevels executando o arquivo de serviço slim, então os dois ambientes incializarão com a interface grafica habilita. 
+
+ 6. Desabilitando interface gráfica utilizando o comando:
+
+* sudo update-rc.d slim disable
+  
+![disable](../Imagens/Runlevel-DisplayManager/disable_displaymanager.png)
+
+Com esse comando, o serviço slim localizado em /etc/init.d/slim será desativado. É possível validar a desativação do serviço identificando como está a letra (S ou K) dentro do diretório do runlevel. Para isso, é utilizado o comando ls novamente:
+
+* ls etc/rc2.d | grep slim
+* ls etc/rc3.d | grep slim
+
+![disable](../Imagens/Runlevel-DisplayManager/killer_displaymanager.png)
+
+Como o nome do arquivo inicia com K, é constatado que o serviço não será executado na incialização. 
+
+Após o reboot do sistem, ela inciará como modo texto.
+
+![disable](../Imagens/Runlevel-DisplayManager/no_display.png)
