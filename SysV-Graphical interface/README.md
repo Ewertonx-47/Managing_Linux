@@ -91,7 +91,7 @@ Acessando /etc/inittab sem interface gráfica:
 
 Nota técnica: Como o serviço slim em /etc/init.d/slim foi desativado, consequentemente todos os runlevels que possuem link simbólico direcionando para esse caminho, irão incializar sem interface gráfica. 
 
- 7. Destivando a interface gráfica apenas de um runlevel.
+ 7. Desativando a interface gráfica apenas de um runlevel.
 
 Para desativar a interface gráfica apenas de um único runlevel, se utiliza o comando: 
 
