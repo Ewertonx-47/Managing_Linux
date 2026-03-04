@@ -11,7 +11,7 @@ Para visualizar o contéudo dentro de /etc/inittab utiliza-se o comando:
  ![nano](../Imagens/Runlevel-DisplayManager/inittab.png)
 
 
- 2. Análise e entendimento da saída nano/cat. Com base na execução do comando, identificamos as seguintes syntaxe:
+ 2. Análise e entendimento da saída nano/cat. Com base na execução do comando, identificamos as seguintes syntaxes:
 
 id:2:initdefault: - Informa ao systemv qual será o runlevel padrão atual.
 
