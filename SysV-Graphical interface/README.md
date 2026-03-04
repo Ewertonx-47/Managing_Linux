@@ -103,7 +103,7 @@ Para desativar a interface gráfica apenas de um único runlevel, se utiliza o c
 
 Após essas alterações, ao dar reboot na máquina com ela no runlevel 2 (alterar em /etc/inittab), ela iniciará com a interface gráfica. 
 
-![up](../Imagens/Runlevel-DisplayManager/enable_displaymanager_runlevel2.png)
+![up](../Imagens/Runlevel-DisplayManager/enable_displaymanage_runlevel2.png)
 
 confirmando runlevel:
 
