@@ -29,7 +29,19 @@ Quando o systemV olha para o /etc/init/rc 2, ele entende que deve ir até o dire
 
 rc2.d (Runlevel atual):
 
-![preparando imagem](../Imagens/Runlevel-isplayManager/inittab.png)
+![preparando imagem](../Imagens/Runlevel-isplayManager/current_runlevel.png)
 
-Dentro de rc2.d é possível visualizar todos os arquivos de serviço. Pode-se perceber que o nome dos arquivos começam com K (kill)e depois mudam para S (Start). Isso significa que primeiro o systemV identifica primeiro os serviços que NÃO devem ser executados e depois os que devem inicializar. Esses arquivos também segue uma ordem de numeração, qual é do maior para o menor. Por exemplo a ordem do rc2.d começa com 01, 02, 03, 04 e 05. Mas um ponto muito importante desses arquivos é que todos eles são links simbólicos. Esses links simbólicos direcionam o sistema para o arquivo de serviço real, que fica localizado e, /etc/init.d
+Dentro de rc2.d é possível visualizar todos os arquivos de serviço. Pode-se perceber que o nome dos arquivos começam com K (kill)e depois mudam para S (Start). Isso significa que primeiro o systemV identifica primeiro os serviços que NÃO devem ser executados e depois os que devem inicializar. Esses arquivos também segue uma ordem de numeração, qual é do maior para o menor. Por exemplo a ordem do rc2.d começa com 01, 02, 03, 04 e 05. Mas um ponto muito importante desses arquivos é que todos eles são links simbólicos. Esses links simbólicos direcionam o sistema para o arquivo de serviço real, que fica localizado em /etc/init.d/*.
+
+ 3. Identificando runlevel atual:
+
+* sudo runlevel
+
+![runlevel](../Imagens/Runlevel-DisplayManager/current_runlevel.png)
+
+A sáida do comando informa que o runlevel atual é o 2, conforme descrito também na syntaxe do /etc/inittab. 
+
+ 4. Aletrando runlevel atual:
+
+* 
 
