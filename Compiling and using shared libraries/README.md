@@ -90,8 +90,17 @@ Após executar o comando, o output mostrou alguns erros de syntaxe do código.
  A compilação não foi executada, pois tinham alguns erros como falta de vírgula, acento til colocado erroneamente, falta de chaves no final do código. Feito todas as correções e executado o comando novamente.
 
  ![correção](../Imagens/shared_libraries/ok_syntaxe_mainc.png)
- 
- 9. Execução e Análise de Dependências
+
+  9. Validação do executável ELF
+
+Após a compilação ser efeutada com sucesso, em /home/ewerton/projeto terá um binário com nome de 'navegador'. a partir disso, o programa está pronto para ser executado. 
+
+* ls -l /home/ewerton/projeto
+
+![ELF](../Imagens/shared_libraries/ok_syntaxe_mainc.png)
+
+ 10. Execução e Análise de Dependências
+
 Para executar aplicações gráficas a partir do terminal puro (TTY), é necessário subir o Debian para interface gráfica e executar o programa:
 
 * sudo systemctl isolate graphical.target
@@ -100,7 +109,7 @@ Após mudar para a interface gráfica, executar o programa em /home/ewerton/proj
 
 ![error](../Imagens/shared_libraries/navegador_gtk.png)
 
- 10. Inspeção de Dependências Dinâmicas
+ 11. Inspeção de Dependências Dinâmicas
 
 Para validar quais bibliotecas o executável "navegador" está solicitando ao sistema em tempo de execução, utilizamos o comando ldd:
 
