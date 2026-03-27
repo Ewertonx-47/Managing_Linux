@@ -51,7 +51,7 @@ Após a instalação das ferramentas necessárias, foi criado um diretório proj
 
 * sudo touch /home/ewerton/projeto/main.c
 
-![main.c](../Imagens/shared_libraries/create_main.c.png)
+![main.c](../Imagens/shared_libraries/create_mainc.png)
 
  5. Gestão de Permissões
 
