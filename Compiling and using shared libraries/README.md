@@ -35,45 +35,79 @@ Para transformar código em binário, é necessário instalar o conjunto de ferr
 * sudo apt update
 * sudo apt install build-essential libgtk-3-dev libwebkit2gtk-4.1-dev pkg-config
 
-![.so](../Imagens/shared_libraries/bibliotecas.png)
+![apt](../Imagens/shared_libraries/apt_install.png)
 
 Componentes Instalados:
+
 build-essential: Inclui o gcc (compilador), make e as bibliotecas base da libc.
 
 libgtk-3-dev & libwebkit2gtk-4.1-dev: Fornecem os headers (.h) e arquivos de desenvolvimento necessários para chamadas de funções gráficas e de renderização web.
 
 pkg-config: Ferramenta indispensável que automatiza a inserção de flags de compilação e caminhos de bibliotecas para o compilador.
 
-4. Gestão de Permissões
+ 4. Criação de de arquivo C
+
+Após a instalação das ferramentas necessárias, foi criado um diretório projeto e dentro desse diretório um arquivo com a extensão .c
+
+* sudo touch /home/ewerton/projeto/main.c
+
+![main.c](../Imagens/shared_libraries/create_main.c.png)
+
+ 5. Gestão de Permissões
+
 Para garantir que o processo de escrita e compilação ocorra sem conflitos de privilégios no diretório do projeto:
 
-Bash
-sudo chown -R $USER:$USER /home/ewerton/projeto
-5. Desenvolvimento do Código-Fonte
+* sudo chown -R ewerton:ewerton /home/ewerton/projeto
+
+![permissao](../Imagens/shared_libraries/permissao_directory.png)
+
+ 6. Desenvolvimento do Código-Fonte
+
 O arquivo main.c utiliza a biblioteca GTK para a interface de janela e a WebKitGTK para renderizar o motor de busca do Google. O objetivo aqui é observar como o código faz referência a símbolos externos que serão resolvidos na compilação.
 
-6. Compilação e Vinculação (Linking)
+Código:
+
+![fonte](../Imagens/shared_libraries/codigo_fonte.png)
+
+7. Compilação e Vinculação (Linking) com erro
+
 A compilação é realizada invocando o gcc e utilizando o pkg-config para resolver as dependências das bibliotecas gráficas.
 
-Bash
-gcc main.c -o navegador $(pkg-config --cflags --libs gtk+-3.0 webkit2gtk-4.1)
+* gcc main.c -o navegador $(pkg-config --cflags --libs gtk+-3.0 webkit2gtk-4.1)
+
+Após executar o comando, o output mostrou alguns erros de syntaxe do código. 
+
+![error](../Imagens/shared_libraries/error_syntaxe.png)
+
 -o navegador: Define o nome do binário de saída.
 
 --cflags: Inclui os caminhos dos cabeçalhos.
 
 --libs: Indica quais bibliotecas o linker deve associar ao executável.
 
-7. Execução e Análise de Dependências
-Para executar aplicações gráficas a partir do terminal puro (TTY), é necessário subir o servidor X ou Wayland:
+ 8. Correção de syntaxe
 
-Bash
-sudo systemctl isolate graphical.target
-./navegador
-Inspeção de Dependências Dinâmicas
+ A compilação não foi executada, pois tinham alguns erros como falta de vírgula, acento til colocado erroneamente, falta de chaves no final do código. Feito todas as correções e executado o comando novamente.
+
+ ![correção](../Imagens/shared_libraries/ok_syntaxe_mainc.png)
+ 
+ 9. Execução e Análise de Dependências
+Para executar aplicações gráficas a partir do terminal puro (TTY), é necessário subir o Debian para interface gráfica e executar o programa:
+
+* sudo systemctl isolate graphical.target
+
+Após mudar para a interface gráfica, executar o programa em /home/ewerton/projeto/navegador:
+
+![error](../Imagens/shared_libraries/navegador_gtk.png)
+
+ 10. Inspeção de Dependências Dinâmicas
+
 Para validar quais bibliotecas o executável "navegador" está solicitando ao sistema em tempo de execução, utilizamos o comando ldd:
 
-Bash
-ldd /home/ewerton/projeto/navegador
+* ldd /home/ewerton/projeto/navegador
+
 Este comando exibirá o mapeamento de cada biblioteca .so necessária e o endereço de memória onde o carregador planeja encontrá-la.
+
+![error](../Imagens/shared_libraries/ldd.png)
 
 
