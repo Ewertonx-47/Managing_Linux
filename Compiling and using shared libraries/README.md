@@ -26,7 +26,7 @@ Comandos de exploração:
 
 * ls -l -Listar arquivos de objetos compartilhados
 
-![.so](../Imagens/shared_libraries/bibliotecas.png)
+![.so](../Imagens/shared_libraries/linux_gnu.png)
 
  3. Preparação do Ambiente de Build
 
