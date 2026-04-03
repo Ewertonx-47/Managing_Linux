@@ -87,13 +87,13 @@ Se a biblioteca for movida para /opt com o parâmetro -P e registrada no ld.so.c
 
 * sudo rm /opt/mylib/*
 
-(imagem)
+![rm](../Imagens/dynamic_linker/rm_library.png)
 
 3.2 - Copiar a biblioteca para /opt/mylib (com symlink)
 
 * cp -P /usr/lib/x85_64-linux-gnu/libwebkit2gtk-4.1.so.0 /opt/mylib
 
-(imagem)
+![cp-p](../Imagens/dynamic_linker/cp-p.png)
 
 3.3 - Registrar diretório
 
@@ -101,19 +101,19 @@ O diretório /opt/mylib já consta dentro de /etc/ld.so.conf.d/.
 
 * ls -l /etc/ld.so.conf.d/mylib.conf
 
-(imagem)
+![ls](../Imagens/dynamic_linker/ls-confd.png)
 
 3.4 Atualizar symlink 
 
 * sudo ldconfig
 
-(imagem)
+![ld](../Imagens/dynamic_linker/ldconfig-p.png)
 
 3.5 - Validando busca do carregador dinâmico
 
 * ldd /home/ewerton/projeto/navegador | grep libwebkit
 
-(imagem)
+![ldd](../Imagens/dynamic_linker/ldd_navegador.png)
 
  4. Resultado observado
 
@@ -130,7 +130,7 @@ O motivo da segunda etapa ocorrer o erro de resolução no gerencimaneto de bibl
 
 * ls -l /usr/lib/x86_64-linux-gnu/libwebkit2gtk-4.1.so.0
 
-(imagem)
+![ls](../Imagens/dynamic_linker/lib19_9.png)
 
 É possível observar que o libwebkit2gtk-4.1.so.0 aponta para libwebkit2gtk-4.1.so.0.19.9, ou seja:
 
@@ -143,7 +143,7 @@ Validando informação da biblioteca libwebkit2gtk-4.1.so.0 usando o comando:
 
 * readlink readlink /usr/lib/x86_64-linux-gnu/libwebkit2gtk-4.1.so.0
 
-(imagem)
+![echo](../Imagens/dynamic_linker/readlink.png)
 
 A saída do comando é apenas "libwebkit2gtk-4.1.so.0.19.9", isso mostra que o symlink não sabe o caminho absoluto do arquivo real, apenas qual é o arquivo. Por ser um symlink alternativo, o sistema entende que o arquivo real está localizado no mesmo diretório do arquivo symlink. 
 
