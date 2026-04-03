@@ -20,7 +20,7 @@ Ferramentas:
 * ls
 * cp
 
-ETAPA COPIANDO A BIBLIOTECA SEM SYMLINK
+ETAPA 1 - COPIANDO A BIBLIOTECA SEM SYMLINK
 
  1. Cenário inicial
 
@@ -71,7 +71,7 @@ O sistema inicialmente reconhece /usr/lib/x85_64-linux-gnu/libwebkit2gtk-4.1.so.
 
 Nota técnica: O arquivo libwebkit2gtk-4.1.so.0 é um link simbólico que aponta para o binário real (libwebkit2gtk-4.1.so.0.19.9). Ao usar o comando cp sem parâmetros adicionais, ele segue o link e copia o conteúdo do arquivo original. Como resultado, em /opt/mylib, você terá um arquivo real nomeado como libwebkit2gtk-4.1.so.0, em vez de manter a estrutura de link simbólico original.
 
-ETAPA COPIANDO A BIBLIOTECA COM SYMLINK
+ETAPA 2 - COPIANDO A BIBLIOTECA COM SYMLINK
 
  1. Cenário inicial
 
