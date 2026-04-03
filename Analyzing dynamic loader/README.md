@@ -32,7 +32,7 @@ A estrutura original dessa biblioteca é:
 
 libwebkit2gtk-4.1.so.0 -> libwebkit2gtk-4.1.so.0.x.y (arquivo real) 
 
-(imagem)
+![ldd](../Imagens/dynamic_linker/ldd_navegador.png)
 
  2. Hipótese
 
