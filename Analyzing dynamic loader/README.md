@@ -120,8 +120,11 @@ O diretório /opt/mylib já consta dentro de /etc/ld.so.conf.d/.
 Ao utilizar o comando cp -P, o link simbólico libwebkit2gtk-4.1.so.0 é copiado para /opt/mylib preservando sua natureza de "atalho". No entanto, isso gera um erro de resolução no gerenciamento de bibliotecas:
 
 --O Problema do Link Órfão: Como o binário real (libwebkit2gtk-4.1.so.0.19.9) não foi copiado junto para /opt/mylib, o link simbólico em seu novo destino aponta para um caminho inexistente naquele diretório.
+
 --Ação do ldconfig: Durante o escaneamento, o ldconfig identifica que o link em /opt/mylib está "quebrado" (aponta para o vazio). Por segurança e integridade do cache, ele ignora esse caminho inválido.
+
 --Persistência do Cache: Como a entrada em /opt/mylib foi descartada, o ldconfig mantém no /etc/ld.so.cache apenas o caminho original e funcional (geralmente em /usr/lib/x86_64-linux-gnu/).
+
 --Resultado: O carregador dinâmico ignora a tentativa de redirecionamento para /opt/mylib e continua utilizando a biblioteca padrão do sistema.
 
 ESCLARECIMENTO TÉCNICO 
