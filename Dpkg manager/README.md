@@ -26,7 +26,6 @@ Para um ambiente mais controlado, um pacote foi baixado em /root, mas vale ressa
 
 * apt download [pacote]
 
-![download](../Imagens/Runlevel-DisplayManager/apt_download.png)
-
+![download](../Imagens/dpkg/apt_download.png)
 
 
