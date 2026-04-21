@@ -2,7 +2,7 @@ Laboratório: Ciclo de Vida do Executável Linux (C, GCC e ELF)
 
 Este laboratório documenta o processo de criação de código-fonte em linguagem C, a gestão de dependências e a compilação para um executável no formato ELF (Executable and Linkable Format).
 
- 1. Fundamentos e Arquitetura de Bibliotecas
+ 1. Fundamentos e Arquitetura de Bibliotecas 
 
 No ecossistema Linux, um executável resulta da compilação de código-fonte e do seu posterior vínculo (linking) a bibliotecas.
 
