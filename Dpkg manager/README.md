@@ -1,4 +1,4 @@
-Laboratório: Gerenciado pacotes com a ferramenta DPKG
+Laboratório: Gerenciando pacotes com a ferramenta DPKG
 
 Esse laboratório descreve o processo e analise de como funciona o DPKG e seus parâmetros. 
 
@@ -42,15 +42,96 @@ Entretanto, ao armazenar o pacote em /root, o usuário _apt não possui permiss�
 Com o pacote no sistema, é possível gerenciar ele com alguns parâmetros. Para saber sobre todos os parâmetros possíveis, execute o comando man dpkg. Os parâmetros utilizados nesse laboratório foram:
 
 -c
--i
+
 -l
+
+-I
+
+-i
+
 -L
+
 -s
 
 3.1 Utilizando -c 
 
 * dpkg -c levee_4.0-2_amd64.deb
 
-![download](../Imagens/dpkg/dpkg_content.png)
+![contente](../Imagens/dpkg/dpkg_content.png)
 
+Esse paramâtro retorna a informação dos arquivos que serão instalados e onde eles serão instalados. a utilização dessa comando é importante, pois ele mostra se o pacote seguirá os padrões FHS (Filesystem Hierarchy Standard), que é é um conjunto de diretrizes que define a estrutura de pastas e a localização de arquivos em sistemas operacionais Unix-like, como o Linux e as permissões que esses arquivos irão ter. Por exemplo, o binário de um executável precisa ser armazenado em /usr/bin. Caso ele esteja projetado ser ser armazenado em /root, o pacote pode ser malicioso. 
+
+ 3.2 Utilizando -l 
+
+ * dpkg -l
+
+![list](../Imagens/dpkg/dpkg_list.png)
+
+O dpkg -l olha apenas para o "inventário físico". Ele lê o arquivo /var/lib/dpkg/status, que é o banco de dados oficial de tudo o que foi descompactado no HD.
+
+O que ele mostra: Apenas pacotes que passaram (ou tentaram passar) pelo sistema.
+
+Estados detalhados: Ele mostra se o pacote está instalado (ii), se foi removido mas deixou arquivos de configuração (rc), ou se a instalação falhou (iF).
+
+Internet: Ele não sabe o que existe na internet. Se procurar por um pacote que existe no repositório mas nunca foi baixado, o dpkg -l dirá que não encontrou nada.
+
+ 3.3 Utilizando -I
+
+ * dpkg -I levee_4.0-2_amd64.deb
+
+![download](../Imagens/dpkg/information.png)
+
+Esse parâmetro trás informações gerais sobre o pacote, informações que incluem: 
+
+I - Estrutura interna do .deb
+
+version 2.0 → versão do formato do pacote .deb (não é do programa)
+size → tamanho total do arquivo
+control archive → parte interna que guarda metadados (tipo “cabeçalho”) 
+
+II - Arquivos de controle
+
+control → informações do pacote (nome, versão, dependências)
+md5sums → hashes dos arquivos (integridade)
+preinst → roda antes da instalação
+postinst → roda depois da instalação
+prerm → roda antes de remover
+postrm → roda depois de remover
+
+Dentro do .deb existem duas partes principais:
+
+data.tar → arquivos que vão para o sistema (/usr/bin, /etc, etc.)
+control.tar → esses arquivos que apareceram com -I
+
+Ou seja:
+
+dpkg -c → mostra o data (arquivos que serão instalados)
+dpkg -I → mostra o control (metadados + scripts)
+
+III. Informações principais do pacote
+
+Package → nome
+Version → versão do software
+Architecture → arquitetura (64 bits aqui)
+
+IV. Mantenedor
+
+Maintainer: tony mancill <tmancill@debian.org>
+
+V. Status e dependências
+
+Installed-Size → espaço que vai ocupar depois de instalado (em KB)
+Depends → dependências obrigatórias
+
+3.4 Utilizando -i e -s
+
+![download](../Imagens/dpkg/dpkg_verify_install.png)
+
+
+
+
+
+
+
+ 
 
