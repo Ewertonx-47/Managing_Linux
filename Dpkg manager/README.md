@@ -4,7 +4,7 @@ Esse laboratório descreve o processo e analise de como funciona o DPKG e seus p
 
  1. Conceitos fundamentais: DPKG é uma ferramenta de baixo nível, diferente do APT, ele não entende repósitorios, ele só instala, remove, mantém e gerencia pacotes já instalados na máquina.
 
-Para visualizar onde os pacotes .deb são armazenados quando o comando apt install é utilizado usa-se o comando:
+Para visualizar a onde os pacotes .deb são armazenados quando o comando apt install é utilizado usa-se o comando:
 
 * ls /var/cache/apt/archives
 
