@@ -8,7 +8,7 @@ Para visualizar onde os pacotes .deb são armazenados quando o comando apt insta
 
 * ls /var/cache/apt/archives
 
-(imagem)
+![ls](../Imagens/dpkg/cache.png)
 
  2. Análise e entendimento da saída ls. Com base na execução do comando, identificamos:
 
