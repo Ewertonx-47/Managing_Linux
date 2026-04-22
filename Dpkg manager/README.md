@@ -79,7 +79,7 @@ Internet: Ele não sabe o que existe na internet. Se procurar por um pacote que 
 
  * dpkg -I levee_4.0-2_amd64.deb
 
-![download](../Imagens/dpkg/information.png)
+![information](../Imagens/dpkg/information.png)
 
 Esse parâmetro trás informações gerais sobre o pacote, informações que incluem: 
 
@@ -125,8 +125,36 @@ Depends → dependências obrigatórias
 
 3.4 Utilizando -i e -s
 
+* dpkg -s levee_4.0-2_amd64.deb
+* dpkg -i levee_4.0-2_amd64.deb
+
 ![download](../Imagens/dpkg/dpkg_verify_install.png)
 
+Usando primeiro o parâmetro -s, ele informa que o pacote não está instalado e que as iformações sobre o pacote não está disponível. Então usando o parâmetro -i e instalando o pacote, foi possível utilizar o -s. É possível observar que o parâmetro -s possui algumas informações que também são mostradas no parâmetro -I, porém existe uma diferença entre eles. 
+
+I - dpkg -I (Info de arquivo):
+
+O -I (i maiúsculo) é usado para interrogar um arquivo .deb que fpo baixado, mas que ainda não foi necessariamente instalado.
+
+Alvo: O arquivo físico (ex: levee_4.0-2_amd64.deb).
+
+Scripts de Controle: Ele é o único que mostra os metadados internos e os scripts de controle (como preinst, postinst, prerm), que são as instruções que o Debian executa antes ou depois da instalação.
+
+Uso Comum: Verificar as dependências de um programa antes de decidir instalá-lo.
+
+II - dpkg -s (status de pacote)
+
+O -s (s minúsculo) consulta o banco de dados local do seu sistema (/var/lib/dpkg/status) para saber a situação de um pacote que o sistema já conhece.
+
+Alvo: O nome do pacote no sistema (ex: levee_4.0-2_amd64.deb).
+
+Informação de Instalação: Ele informa se o pacote está "Install ok installed", a versão atual instalada e o espaço que ele está ocupando no disco agora.
+
+Limitação: Se o pacote não estiver instalado (ou se você tentar apontar para um arquivo .deb), o comando falhará.
+
+3.4 Utilizando -r
+
+![remove](../Imagens/dpkg/dpkg_remove.png)
 
 
 
