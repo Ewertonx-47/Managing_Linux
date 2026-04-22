@@ -156,7 +156,7 @@ Limitação: Se o pacote não estiver instalado (ou se você tentar apontar para
 
 ![remove](../Imagens/dpkg/dpkg_remove.png)
 
-
+O parâmetro -r é utilizado para desintalar o pacote do sistema, porém se utilizar o -s novamente, ele já não só retorna a informação de que não está instalado e que não tem informações. Como o pacote foi instalado, ele foi para o banco de dados do dpkg (/var/lib/dpkg/status). Com isso o -s consegue ir até o banco de dados e buscar as informações, principalmente que o pacote não está instalado. 
 
 
 
