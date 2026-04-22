@@ -41,17 +41,7 @@ Entretanto, ao armazenar o pacote em /root, o usuário _apt não possui permiss�
 
 Com o pacote no sistema, é possível gerenciar ele com alguns parâmetros. Para saber sobre todos os parâmetros possíveis, execute o comando man dpkg. Os parâmetros utilizados nesse laboratório foram:
 
--c
-
--l
-
--I
-
--i
-
--L
-
--s
+-c, -l, -I, -i, -s
 
 3.1 Utilizando -c 
 
