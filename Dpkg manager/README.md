@@ -20,7 +20,7 @@ I- Reinstalação rápida: Se você desinstalar um pacote e quiser instalá-lo d
 
 II - Segurança em atualizações: Se uma atualização falhar, você ainda tem os pacotes baixados ali para tentar entender o que aconteceu ou reinstalar manualmente via dpkg.
 
- 2. Intalando pacote e gerenciado com DPKG
+ 2. Intalando pacote e gerenciando com DPKG
 
 Para um ambiente mais controlado, um pacote foi baixado em /root, mas vale ressaltar que não é uma boa prática para o dia a dia. Para baixar um pacote utiliza-se o comando:
 
