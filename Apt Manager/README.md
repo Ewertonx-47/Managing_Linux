@@ -59,7 +59,17 @@ Dentro do arquivo deb.debian.org_debian_dists_trixie_main_binary-amd64_Packages 
 
 (imagem)
 
-A saída do comando cat juntamente com o comando grep mostrou o índice que o apt consulta na instalação do pacote levee. Esses índices são: Package, homepage e filename. São essas as informações básicas que o apt precisapara ir até o repositório e fazer o download e instalação do pacote .deb levee. 
+A saída do comando cat juntamente com o comando grep mostrou o índice que o apt consulta na instalação do pacote levee. Esses índices são: Package, homepage e filename. São essas as informações básicas que o apt precisa para ir até o repositório e fazer o download e instalação do pacote .deb levee. 
 
-2.2 
+2.2 Localizando o diretório dos repositórios
+
+No momendo da instalação de algum pacote, utilizando o APT, após localizar o índice do pacote em /var/lib/apt/lists/ ele visualiza os diretórios disponiveis para fazer a busca do pacote e instalar. A informação desses respositórios ficam em /etc/apt/sources.list. Para visualizar o conteúdo, utiliza-se o comando:
+
+* ls /etc/apt/sources.list
+
+(imagem) 
+
+Analisando a saída do comando ls, é possível ver informações sobre os respositórios disponíveis para o APT. Também existe o diretório sources.list.d, que pode ser utilizado para a adicionar novos repositórios. Após adicionar outro repositório no sistema, é necessário executar o comando apt update. 
+
+
 
