@@ -33,7 +33,7 @@ Assim, ambas as máquinas precisariam migrar para a nova rede criada no MikroTik
 
 Para isso, foi criada uma bridge entre as interfaces ether2 e ether3.
 
-![bridge](../Imagens/Bridge/bridge.png)
+![bridge](../Imagens/Bridge/brigde.png)
 
 Após a criação da brigde, é preciso incluir as interfaces que farão parte dessa bridge.
 
