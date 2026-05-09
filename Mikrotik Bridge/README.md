@@ -2,10 +2,14 @@ Laboratório: Migrando Proxmox da rede do roteador para a rede MikroTik
 
 Neste laboratório será realizada a migração do servidor Proxmox, que anteriormente estava conectado diretamente na rede do roteador doméstico, para a rede do MikroTik.
 
-Resumo geral da rede doméstica
+Resumo geral da rede doméstica:
+
 Rede: 192.168.1.0/24
+
 Gateway: 192.168.1.1
+
 Máscara: 255.255.255.0
+
 Broadcast: 192.168.1.255
 
 No MikroTik, a interface ether1 foi configurada como DHCP Client para receber automaticamente um endereço IP do modem/roteador doméstico.
