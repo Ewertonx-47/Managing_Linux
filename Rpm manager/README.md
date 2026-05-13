@@ -85,12 +85,3 @@ de erro impressa na tela. Agora, testando o nano, o resultado é:
 ![nano](../Imagens/rpm/nano.png)
 
 Editor de arquivo funcionando normalmente. 
-
-Agora, será feito a atualização de um pacote utilizando o RPM, e o pacote que será manipulado será o nginx, pois o nano só possui uma versão no repositório da Rocky linux.
-Caso o sistema tenha uma nova versão de um pacote, é possível utilizar o parâmetro -U, mas para isso, é necessário que a nova versão esteja baixada manualmente também. 
-Para ver quais são as versões disponíveis, se usa o comando:
-
-* dnf list --showduplicates nano
-
-![dnflist](../Imagens/rpm/dnf_lists.png)
-
