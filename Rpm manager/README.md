@@ -69,7 +69,7 @@ Para que fora, do /home/ewerton o RPM consiga mapear e extrai informações, é 
 
 Ou seja, o parâmetro -p nesse deve ser utilizado porque deixa explícito a intenção, evita ambiguidades, funciona de forma previsível, e é o padrão esperado em scripts e documentação técnica.
 
- 3. Instalando, atualizando e removendo pacotes com RPM
+ 3. Instalando e removendo pacotes com RPM
  
 Uma das operações mais básicas é instalar, atualizar pacotes do sistema. Com o arquivo nano localizado em /home/ewerton, é possível executar o comando de instalação do nano.
 Como informando no tópico anterior, é possível executar o RPM estando dentro do diretório que possui o arquivo ou de fora do diretório, mas passando o caminho completo. Nesse caso,
@@ -85,3 +85,15 @@ de erro impressa na tela. Agora, testando o nano, o resultado é:
 ![nano](../Imagens/rpm/nano.png)
 
 Editor de arquivo funcionando normalmente. 
+
+Para desintalar um pacote que já se encontra no sistema usando o RPM, podemos usar o comando:
+
+* sudo rpm -e [pacote]
+
+![remove](../Imagens/rpm/rpm_remove.png)
+
+Como mostrado na imagem, o pacote não está mais disponível para uso. Caso o pacote tivesse um outro pacote dependente, não seria possível efetuar a remoção do pacote do sistema,
+sendo necessário desintalar a dependência também. 
+
+
+
